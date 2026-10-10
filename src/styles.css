@@ -1234,3 +1234,249 @@ button {
     margin-top: 4px;
   }
 }
+
+.platform-connection-shell {
+  --platform-accent: var(--blue);
+  --platform-tint: color-mix(in oklch, var(--blue-light) 26%, var(--surface));
+  --platform-line: var(--border);
+  width: min(calc(100% - 32px), 356px);
+  margin: 16px auto;
+  padding: 25px 15px 13px;
+  border-radius: 23px;
+  background: var(--surface);
+  box-shadow: var(--dashboard-shadow);
+}
+.platform-theme-instagram {
+  --platform-accent: var(--violet);
+  --platform-tint: color-mix(in oklch, var(--violet-light) 27%, var(--surface));
+  --platform-line: color-mix(in oklch, var(--violet-light) 76%, var(--surface));
+}
+.platform-theme-whatsapp {
+  --platform-accent: var(--primary);
+  --platform-tint: color-mix(in oklch, var(--mint-surface) 35%, var(--surface));
+  --platform-line: color-mix(in oklch, var(--green-light) 60%, var(--surface));
+}
+.platform-connection-header {
+  position: relative;
+  min-height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.platform-connection-header .brand-wordmark {
+  font-size: 23px;
+  gap: 6px;
+}
+.platform-connection-header .brand-wordmark svg {
+  width: 47px;
+  height: 31px;
+}
+.platform-connection-back {
+  position: absolute;
+  left: -4px;
+  width: 27px;
+}
+.platform-connection-back svg {
+  width: 20px;
+  height: 20px;
+}
+.platform-connection-intro {
+  text-align: center;
+}
+.platform-connection-intro > .social-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 19px;
+}
+.platform-connection-intro > .social-icon > svg {
+  width: 49px;
+  height: 49px;
+}
+.platform-connection-intro > .social-facebook,
+.platform-connection-intro > .social-whatsapp {
+  border-radius: 50%;
+}
+.platform-connection-intro .facebook-letter {
+  font-size: 81px;
+  transform: translateY(13px);
+}
+.platform-connection-intro .whatsapp-symbol {
+  transform: scale(1.48);
+}
+.platform-connection-intro h1 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.8;
+  margin: 10px 0 9px;
+}
+.platform-connection-intro p {
+  font-size: 12px;
+  line-height: 1.95;
+  color: var(--muted-foreground);
+  margin: 0 8px 21px;
+}
+.platform-permissions {
+  background: var(--platform-tint);
+  border: 1px solid var(--platform-line);
+  border-radius: 10px;
+  padding: 13px 13px 14px;
+}
+.platform-permissions h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--platform-accent);
+  font-size: 12px;
+  margin: 0 0 9px;
+  font-weight: 600;
+}
+.platform-permissions h2 svg {
+  width: 21px;
+  height: 21px;
+}
+.platform-permissions ul {
+  list-style: none;
+  padding: 0 6px 0 0;
+  margin: 0;
+}
+.platform-permissions li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 2.2;
+}
+.platform-permissions li svg {
+  fill: var(--platform-accent);
+  color: var(--primary-foreground);
+  width: 15px;
+  height: 15px;
+}
+.platform-continue-button {
+  width: 100%;
+  height: 44px;
+  border-radius: 13px;
+  margin-top: 15px;
+  font-size: 12px;
+  gap: 12px;
+}
+.platform-continue-button .social-icon {
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 50%;
+}
+.platform-continue-button .social-icon > svg {
+  width: 23px;
+  height: 23px;
+}
+.platform-continue-button .facebook-letter {
+  font-size: 29px;
+  transform: translateY(3px);
+}
+.platform-continue-button .social-facebook {
+  background: var(--primary-foreground);
+  color: var(--primary);
+  width: 23px;
+  height: 23px;
+}
+.platform-continue-button .whatsapp-symbol {
+  transform: scale(0.72);
+}
+.platform-action-notice {
+  color: var(--muted-foreground);
+  text-align: center;
+  font-size: 11px;
+  margin: 9px 0 0;
+}
+.platform-or {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--blue);
+  font-size: 12px;
+  margin: 15px 1px;
+}
+.platform-or::before,
+.platform-or::after {
+  content: "";
+  height: 1px;
+  background: var(--border);
+  flex: 1;
+}
+.platform-copy-section {
+  border: 1px solid var(--platform-line);
+  background: color-mix(in oklch, var(--blue-light) 18%, var(--surface));
+  border-radius: 10px;
+  padding: 11px 11px 9px;
+  text-align: center;
+}
+.platform-theme-whatsapp .platform-copy-section {
+  background: var(--platform-tint);
+}
+.platform-copy-copy {
+  display: flex;
+  align-items: flex-start;
+  text-align: right;
+  gap: 10px;
+}
+.platform-copy-copy > svg {
+  color: var(--platform-accent);
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.platform-copy-copy p {
+  font-size: 10px;
+  line-height: 1.9;
+  margin: 0 0 12px;
+  color: var(--blue);
+}
+.platform-copy-button {
+  color: var(--blue);
+  border: 1px solid color-mix(in oklch, var(--blue) 35%, var(--surface));
+  background: transparent;
+  height: 30px;
+  border-radius: 18px;
+  font-size: 9px;
+  padding: 0 18px;
+  gap: 8px;
+}
+.platform-copy-button:hover {
+  background: var(--blue-light);
+}
+.platform-copy-button svg {
+  width: 12px;
+  height: 12px;
+}
+.platform-theme-whatsapp .platform-copy-button {
+  border-color: color-mix(in oklch, var(--primary) 35%, var(--surface));
+}
+.platform-copy-error {
+  font-size: 10px;
+  color: var(--destructive);
+  margin: 8px 0 0;
+}
+.platform-footer-art {
+  display: block;
+  width: 185px;
+  height: 98px;
+  object-fit: cover;
+  object-position: center 35%;
+  margin: 13px auto 0;
+  mix-blend-mode: multiply;
+}
+@media (max-width: 360px) {
+  .platform-connection-shell {
+    width: calc(100% - 20px);
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .platform-connection-intro h1 {
+    font-size: 17px;
+  }
+}

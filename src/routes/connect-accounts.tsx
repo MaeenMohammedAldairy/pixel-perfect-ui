@@ -22,7 +22,12 @@ export const Route = createFileRoute("/connect-accounts")({
   component: ConnectAccounts,
 });
 
-const connectionPlatforms: { platform: SocialPlatform; label: string; description: string; to: "/connect/instagram" | "/connect/facebook" | "/connect/whatsapp" }[] = [
+const connectionPlatforms: {
+  platform: SocialPlatform;
+  label: string;
+  description: string;
+  to: "/connect/instagram" | "/connect/facebook" | "/connect/whatsapp";
+}[] = [
   {
     platform: "instagram",
     to: "/connect/instagram",
@@ -90,14 +95,10 @@ function ConnectAccounts() {
                 <h3>{label}</h3>
                 <p>{description}</p>
               </div>
-              <Button
-                asChild
-                variant="dashboard"
-                className="connection-account-button"
-              >
+              <Button asChild variant="dashboard" className="connection-account-button">
                 <Link to={to} aria-label={`ربط حساب ${label}`}>
-                <LinkIcon />
-                <span>ربط الحساب</span>
+                  <LinkIcon />
+                  <span>ربط الحساب</span>
                 </Link>
               </Button>
             </article>
