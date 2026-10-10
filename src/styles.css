@@ -62,24 +62,24 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.5rem;
+  --background: oklch(0.976 0.015 220);
+  --foreground: oklch(0.255 0.105 267);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.67 0.17 165);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
+  --muted-foreground: oklch(0.65 0.1 259);
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
+  --border: oklch(0.935 0.03 225);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -140,5 +140,764 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+:root {
+  --font-body: "Noto Sans Arabic", sans-serif;
+  --font-brand: "Manrope", sans-serif;
+  --surface: oklch(0.999 0.002 220);
+  --mint-surface: oklch(0.965 0.047 166);
+  --brand-light: oklch(0.79 0.18 166);
+  --positive: oklch(0.64 0.17 160);
+  --blue: oklch(0.66 0.17 251);
+  --blue-light: oklch(0.94 0.045 242);
+  --amber: oklch(0.68 0.16 65);
+  --amber-light: oklch(0.95 0.065 85);
+  --violet: oklch(0.58 0.27 305);
+  --violet-light: oklch(0.95 0.05 305);
+  --green: oklch(0.61 0.19 149);
+  --green-light: oklch(0.94 0.07 162);
+  --notification: oklch(0.62 0.25 22);
+  --instagram-yellow: oklch(0.87 0.17 85);
+  --instagram-red: oklch(0.65 0.24 20);
+  --instagram-pink: oklch(0.63 0.28 335);
+  --instagram-purple: oklch(0.62 0.29 300);
+  --dashboard-shadow: 0 8px 32px oklch(0.78 0.07 224 / 0.12);
+  --social-shadow: inset 0 1px 4px oklch(1 0 0 / 0.45);
+  --instagram-gradient: linear-gradient(
+    25deg,
+    var(--instagram-yellow),
+    var(--instagram-red) 33%,
+    var(--instagram-pink) 63%,
+    var(--instagram-purple)
+  );
+}
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  letter-spacing: 0;
+}
+button {
+  font-family: inherit;
+}
+.dashboard-shell {
+  width: min(100% - 40px, 710px);
+  margin: 22px auto;
+  padding: 26px 16px 0;
+  background: var(--surface);
+  border-radius: 28px;
+  box-shadow: var(--dashboard-shadow);
+  overflow: hidden;
+}
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 77px;
+  margin: 0 8px 17px;
+}
+.account-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.account-profile p {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+.account-profile div > span {
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+.profile-mark {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--dashboard-shadow);
+  border: 1px solid var(--border);
+}
+.profile-mark svg {
+  width: 32px;
+}
+.account-chevron {
+  width: 18px;
+  color: var(--muted-foreground);
+}
+.brand-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-brand);
+  font-size: 31px;
+  font-weight: 800;
+}
+.brand-wordmark svg {
+  width: 64px;
+  height: 42px;
+}
+.dashboard-icon-button {
+  background: transparent;
+  color: var(--foreground);
+  box-shadow: none;
+}
+.dashboard-icon-button:hover {
+  background: var(--mint-surface);
+}
+.notification-button {
+  position: relative;
+  flex-shrink: 0;
+}
+.notification-button svg {
+  width: 29px;
+  height: 29px;
+  stroke-width: 1.8;
+}
+.notification-count {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--notification);
+  color: var(--primary-foreground);
+  font-family: var(--font-brand);
+  font-size: 11px;
+  border: 1px solid var(--surface);
+}
+.welcome-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 234px;
+  background: var(--mint-surface);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.welcome-copy {
+  width: 55%;
+  padding: 15px 14px 35px 0;
+  position: relative;
+  z-index: 1;
+}
+.welcome-copy h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 4px;
+  white-space: nowrap;
+}
+.welcome-copy h1 bdi {
+  font-family: var(--font-brand);
+  font-weight: 800;
+}
+.welcome-copy p {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.95;
+  margin: 0 0 19px;
+}
+.dashboard-button {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  border-radius: 13px;
+  font-weight: 600;
+  box-shadow: none;
+}
+.dashboard-button:hover {
+  background: var(--positive);
+}
+.connect-button {
+  width: 100%;
+  height: 50px;
+  justify-content: flex-start;
+  font-size: 15px;
+  padding: 0 18px;
+}
+.connect-button svg {
+  width: 23px;
+  height: 23px;
+}
+.connect-button svg:last-child {
+  margin-right: auto;
+}
+.welcome-art {
+  width: 47%;
+  height: 232px;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 11px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+.carousel-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.carousel-dots span:first-child {
+  background: var(--primary);
+}
+.carousel-dots span:nth-child(2) {
+  background: var(--muted-foreground);
+}
+.stats-section,
+.platforms-section,
+.activities-section {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  margin-top: 16px;
+  padding: 16px;
+  box-shadow: 0 3px 14px oklch(0.78 0.07 224 / 0.04);
+}
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 23px 17px 17px;
+}
+.stat-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 9px 4px 7px;
+}
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklch, currentColor 15%, transparent);
+}
+.stat-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.6;
+}
+.stat-amber {
+  color: var(--amber);
+  background: var(--amber-light);
+}
+.stat-violet {
+  color: var(--violet);
+  background: var(--violet-light);
+}
+.stat-blue {
+  color: var(--blue);
+  background: var(--blue-light);
+}
+.stat-green {
+  color: var(--green);
+  background: var(--green-light);
+}
+.stat-item h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 7px 0 2px;
+}
+.stat-item strong {
+  font-size: 23px;
+  line-height: 1.5;
+  font-family: var(--font-brand);
+}
+.stat-growth {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-family: var(--font-brand);
+  font-weight: 800;
+  margin-top: 3px;
+}
+.stat-growth svg {
+  width: 16px;
+  height: 16px;
+}
+.platforms-section {
+  padding: 5px 19px 15px;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  line-height: 1.8;
+}
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.platform-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 4px 7px;
+}
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 11px;
+  color: var(--primary-foreground);
+  box-shadow: var(--social-shadow);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.social-icon > svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 2;
+}
+.social-instagram {
+  background: var(--instagram-gradient);
+}
+.social-facebook {
+  background: var(--blue);
+}
+.social-whatsapp {
+  background: var(--positive);
+}
+.facebook-letter {
+  font:
+    700 52px Arial,
+    sans-serif;
+  transform: translateY(7px);
+}
+.whatsapp-symbol {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-symbol svg:first-child {
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-symbol svg:last-child {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  top: 6px;
+  left: 8px;
+  stroke-width: 2.5;
+}
+.platform-item h3 {
+  font-size: 14px;
+  margin: 2px 0 3px;
+  font-weight: 500;
+}
+.platform-add {
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  background: var(--mint-surface);
+  border-radius: 50%;
+}
+.platform-add svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+.platform-item > span:last-child {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.activities-section {
+  padding: 4px 11px 8px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+.section-heading h2 svg {
+  width: 21px;
+  height: 21px;
+  color: var(--positive);
+}
+.view-all {
+  color: var(--positive);
+  font-size: 13px;
+  padding: 0;
+  height: 35px;
+  gap: 5px;
+}
+.activity-list {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 8px;
+}
+.activity-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.activity-row:last-child {
+  border-bottom: 0;
+}
+.activity-row > .social-icon,
+.activity-icon {
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+}
+.activity-row .social-icon > svg {
+  width: 23px;
+  height: 23px;
+}
+.activity-row .whatsapp-symbol {
+  transform: scale(0.76);
+}
+.activity-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.activity-row p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.6;
+}
+.activity-row div > span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+.activity-row > svg {
+  width: 17px;
+  color: var(--muted-foreground);
+}
+.activity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activity-icon svg {
+  width: 21px;
+  height: 21px;
+}
+.activity-blue {
+  background: var(--blue);
+  color: var(--primary-foreground);
+}
+.activity-amber {
+  background: var(--amber-light);
+  color: var(--amber);
+}
+.bottom-navigation {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0 -16px;
+  padding: 11px 8px 7px;
+  border-top: 1px solid var(--border);
+}
+.dashboard-nav-button {
+  color: var(--muted-foreground);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 61px;
+  padding: 0 2px 7px;
+  font-size: 12px;
+  position: relative;
+}
+.dashboard-nav-button svg {
+  width: 23px;
+  height: 23px;
+}
+.nav-active {
+  color: var(--positive);
+  font-weight: 700;
+}
+.nav-active svg {
+  fill: var(--primary);
+}
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--positive);
+}
+@media (max-width: 600px) {
+  .dashboard-shell {
+    width: calc(100% - 24px);
+    padding: 14px 9px 0;
+    margin: 12px auto;
+    border-radius: 22px;
+  }
+  .dashboard-header {
+    gap: 7px;
+    margin: 0 2px 12px;
+    min-height: 55px;
+  }
+  .brand-wordmark {
+    font-size: 21px;
+    gap: 3px;
+  }
+  .brand-wordmark svg {
+    width: 40px;
+    height: 29px;
+  }
+  .account-profile {
+    gap: 5px;
+  }
+  .account-profile p {
+    font-size: 10px;
+  }
+  .account-profile div > span {
+    font-size: 9px;
+  }
+  .profile-mark {
+    width: 28px;
+    height: 28px;
+  }
+  .profile-mark svg {
+    width: 21px;
+  }
+  .account-chevron {
+    width: 12px;
+  }
+  .notification-button {
+    width: 27px;
+  }
+  .notification-button svg {
+    width: 23px;
+    height: 23px;
+  }
+  .notification-count {
+    width: 15px;
+    height: 15px;
+    font-size: 9px;
+    right: -2px;
+    top: 2px;
+  }
+  .welcome-section {
+    min-height: 167px;
+    border-radius: 13px;
+  }
+  .welcome-copy {
+    width: 57%;
+    padding: 10px 9px 24px 0;
+  }
+  .welcome-copy h1 {
+    font-size: 15px;
+  }
+  .welcome-copy p {
+    font-size: 8px;
+    line-height: 2.15;
+    margin-bottom: 12px;
+  }
+  .welcome-art {
+    width: 45%;
+    height: 164px;
+    object-fit: cover;
+  }
+  .connect-button {
+    height: 34px;
+    font-size: 10px;
+    padding: 0 10px;
+    border-radius: 9px;
+    gap: 5px;
+  }
+  .connect-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  .carousel-dots {
+    gap: 6px;
+    bottom: 8px;
+  }
+  .carousel-dots span {
+    width: 6px;
+    height: 6px;
+  }
+  .stats-section,
+  .platforms-section,
+  .activities-section {
+    margin-top: 11px;
+    border-radius: 10px;
+  }
+  .stats-section {
+    padding: 12px 8px 10px;
+    gap: 6px;
+  }
+  .stat-item {
+    padding: 7px 2px 5px;
+    border-radius: 7px;
+  }
+  .stat-icon {
+    width: 31px;
+    height: 31px;
+    border-radius: 10px;
+  }
+  .stat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .stat-item h2 {
+    font-size: 9px;
+    margin: 5px 0 1px;
+  }
+  .stat-item strong {
+    font-size: 19px;
+  }
+  .stat-growth {
+    font-size: 12px;
+    gap: 2px;
+    margin-top: 1px;
+  }
+  .stat-growth svg {
+    width: 12px;
+    height: 12px;
+  }
+  .platforms-section {
+    padding: 5px 9px 9px;
+  }
+  .section-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .platform-grid {
+    gap: 6px;
+  }
+  .platform-item {
+    padding: 7px 3px 5px;
+    border-radius: 7px;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+  }
+  .social-icon > svg {
+    width: 25px;
+    height: 25px;
+  }
+  .facebook-letter {
+    font-size: 41px;
+    transform: translateY(6px);
+  }
+  .whatsapp-symbol {
+    transform: scale(0.8);
+  }
+  .platform-item h3 {
+    font-size: 10px;
+    margin: 3px 0 2px;
+  }
+  .platform-add {
+    width: 23px;
+    height: 23px;
+  }
+  .platform-add svg {
+    width: 16px;
+    height: 16px;
+  }
+  .platform-item > span:last-child {
+    font-size: 8px;
+  }
+  .activities-section {
+    padding: 3px 7px 7px;
+  }
+  .section-heading h2 {
+    gap: 5px;
+  }
+  .section-heading h2 svg {
+    width: 16px;
+  }
+  .view-all {
+    font-size: 10px;
+    height: 28px;
+  }
+  .view-all svg {
+    width: 13px;
+  }
+  .activity-list {
+    padding: 0 5px;
+  }
+  .activity-row {
+    min-height: 40px;
+    gap: 7px;
+  }
+  .activity-row p {
+    font-size: 9px;
+  }
+  .activity-row div > span {
+    font-size: 8px;
+  }
+  .activity-row > .social-icon,
+  .activity-icon {
+    width: 23px;
+    height: 23px;
+    border-radius: 6px;
+  }
+  .activity-row .social-icon > svg {
+    width: 20px;
+    height: 20px;
+  }
+  .activity-row .whatsapp-symbol {
+    transform: scale(0.63);
+  }
+  .activity-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .activity-row > svg {
+    width: 13px;
+  }
+  .bottom-navigation {
+    margin: 0 -9px;
+    padding: 9px 5px 6px;
+  }
+  .dashboard-nav-button {
+    height: 49px;
+    font-size: 9px;
+    gap: 2px;
+  }
+  .dashboard-nav-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
   }
 }
