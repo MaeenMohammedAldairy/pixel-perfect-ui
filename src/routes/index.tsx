@@ -1,19 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUp, Bell, Box, CalendarDays, CalendarRange, ChartNoAxesColumnIncreasing, ChevronDown, ChevronLeft, FileText, House, Link as LinkIcon, MessageSquareMore, Plus, Settings, Share2 } from "lucide-react";
+import {
+  ArrowUp,
+  Bell,
+  Box,
+  CalendarDays,
+  CalendarRange,
+  ChartNoAxesColumnIncreasing,
+  ChevronDown,
+  ChevronLeft,
+  FileText,
+  House,
+  Link as LinkIcon,
+  MessageSquareMore,
+  Plus,
+  Settings,
+  Share2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MenaFlowMark } from "@/components/menaflow-brand";
 import { SocialIcon, type SocialPlatform } from "@/components/social-icon";
 import robotImage from "@/assets/menaflow-robot.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [
-    { title: "MenaFlow | الرئيسية" },
-    { name: "description", content: "منصتك الذكية لإدارة حساباتك الاجتماعية، المحتوى والمحادثات في مكان واحد." },
-    { property: "og:title", content: "MenaFlow | الرئيسية" },
-    { property: "og:description", content: "حساباتك الاجتماعية وأحدث الأنشطة مع MenaFlow." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  head: () => ({
+    meta: [
+      { title: "MenaFlow | الرئيسية" },
+      {
+        name: "description",
+        content: "منصتك الذكية لإدارة حساباتك الاجتماعية، المحتوى والمحادثات في مكان واحد.",
+      },
+      { property: "og:title", content: "MenaFlow | الرئيسية" },
+      { property: "og:description", content: "حساباتك الاجتماعية وأحدث الأنشطة مع MenaFlow." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
@@ -40,31 +61,168 @@ function Index() {
   return (
     <main className="dashboard-shell" dir="rtl">
       <header className="dashboard-header">
-        <div className="account-profile"><span className="profile-mark"><MenaFlowMark /></span><div><p>أحمد محمد أحمد</p><span>مدير الحساب</span></div><ChevronDown className="account-chevron" /></div>
-        <div className="brand-wordmark" dir="ltr"><MenaFlowMark /><span>MenaFlow</span></div>
-        <Button variant="dashboardIcon" size="icon" className="notification-button" aria-label="الإشعارات، 3 إشعارات جديدة"><Bell /><span className="notification-count">3</span></Button>
+        <div className="account-profile">
+          <span className="profile-mark">
+            <MenaFlowMark />
+          </span>
+          <div>
+            <p>أحمد محمد أحمد</p>
+            <span>مدير الحساب</span>
+          </div>
+          <ChevronDown className="account-chevron" />
+        </div>
+        <div className="brand-wordmark" dir="ltr">
+          <MenaFlowMark />
+          <span>MenaFlow</span>
+        </div>
+        <Button
+          variant="dashboardIcon"
+          size="icon"
+          className="notification-button"
+          aria-label="الإشعارات، 3 إشعارات جديدة"
+        >
+          <Bell />
+          <span className="notification-count">3</span>
+        </Button>
       </header>
 
       <section className="welcome-section" aria-labelledby="welcome-title">
-        <div className="welcome-copy"><h1 id="welcome-title">مرحباً بك في <bdi>MenaFlow</bdi></h1><p>منصتك الذكية لإدارة جميع حساباتك الاجتماعية<br />بأدوات متطورة وموظف خدمة عملاء يعمل <bdi>24/7</bdi></p><Button variant="dashboard" className="connect-button"><LinkIcon /><span>اربط حساباتك الآن</span><ChevronLeft /></Button></div>
-        <img className="welcome-art" src={robotImage} alt="روبوت MenaFlow مع أيقونات التواصل الاجتماعي" width={1024} height={768} />
-        <div className="carousel-dots" aria-hidden="true"><span /><span /><span /></div>
+        <div className="welcome-copy">
+          <h1 id="welcome-title">
+            مرحباً بك في <bdi>MenaFlow</bdi>
+          </h1>
+          <p>
+            منصتك الذكية لإدارة جميع حساباتك الاجتماعية
+            <br />
+            بأدوات متطورة وموظف خدمة عملاء يعمل <bdi>24/7</bdi>
+          </p>
+          <Button variant="dashboard" className="connect-button">
+            <LinkIcon />
+            <span>اربط حساباتك الآن</span>
+            <ChevronLeft />
+          </Button>
+        </div>
+        <img
+          className="welcome-art"
+          src={robotImage}
+          alt="روبوت MenaFlow مع أيقونات التواصل الاجتماعي"
+          width={1024}
+          height={768}
+        />
+        <div className="carousel-dots" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
       </section>
 
       <section className="stats-section" aria-label="ملخص الحساب">
-        {stats.map(({ label, value, growth, icon: Icon, tone }) => <div className="stat-item" key={label}><span className={`stat-icon stat-${tone}`}><Icon /></span><h2>{label}</h2><strong>{value}</strong><span className="stat-growth" dir="ltr"><ArrowUp />{growth}</span></div>)}
+        {stats.map(({ label, value, growth, icon: Icon, tone }) => (
+          <div className="stat-item" key={label}>
+            <span className={`stat-icon stat-${tone}`}>
+              <Icon />
+            </span>
+            <h2>{label}</h2>
+            <strong>{value}</strong>
+            <span className="stat-growth" dir="ltr">
+              <ArrowUp />
+              {growth}
+            </span>
+          </div>
+        ))}
       </section>
 
-      <section className="platforms-section" aria-labelledby="platforms-title"><h2 id="platforms-title" className="section-title">منصاتك المتصلة</h2><div className="platform-grid">{platforms.map(({ platform, label }) => <div className="platform-item" key={platform}><SocialIcon platform={platform} /><h3>{label}</h3><Button variant="dashboardIcon" size="icon" className="platform-add" aria-label={`ربط حساب ${label}`}><Plus /></Button><span>ربط الحساب</span></div>)}</div></section>
+      <section className="platforms-section" aria-labelledby="platforms-title">
+        <h2 id="platforms-title" className="section-title">
+          منصاتك المتصلة
+        </h2>
+        <div className="platform-grid">
+          {platforms.map(({ platform, label }) => (
+            <div className="platform-item" key={platform}>
+              <SocialIcon platform={platform} />
+              <h3>{label}</h3>
+              <Button
+                variant="dashboardIcon"
+                size="icon"
+                className="platform-add"
+                aria-label={`ربط حساب ${label}`}
+              >
+                <Plus />
+              </Button>
+              <span>ربط الحساب</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <section className="activities-section" aria-labelledby="activities-title"><div className="section-heading"><h2 id="activities-title" className="section-title"><FileText />أحدث الأنشطة</h2><Button variant="ghost" className="view-all">عرض الكل<ChevronLeft /></Button></div><div className="activity-list">
-        <div className="activity-row"><SocialIcon platform="instagram" /><div><p>تم نشر منشور جديد على <bdi>Instagram</bdi></p><span>منذ 5 دقائق</span></div><ChevronLeft /></div>
-        <div className="activity-row"><span className="activity-icon activity-blue"><MessageSquareMore /></span><div><p>رسالة جديدة من عميل</p><span>منذ 12 دقيقة</span></div><ChevronLeft /></div>
-        <div className="activity-row"><span className="activity-icon activity-amber"><CalendarDays /></span><div><p>تم تأكيد طلب رقم <bdi>#1024</bdi></p><span>منذ 25 دقيقة</span></div><ChevronLeft /></div>
-        <div className="activity-row"><SocialIcon platform="whatsapp" /><div><p>تم استلام منتج جديد من واتساب</p><span>منذ ساعة</span></div><ChevronLeft /></div>
-      </div></section>
+      <section className="activities-section" aria-labelledby="activities-title">
+        <div className="section-heading">
+          <h2 id="activities-title" className="section-title">
+            <FileText />
+            أحدث الأنشطة
+          </h2>
+          <Button variant="ghost" className="view-all">
+            عرض الكل
+            <ChevronLeft />
+          </Button>
+        </div>
+        <div className="activity-list">
+          <div className="activity-row">
+            <SocialIcon platform="instagram" />
+            <div>
+              <p>
+                تم نشر منشور جديد على <bdi>Instagram</bdi>
+              </p>
+              <span>منذ 5 دقائق</span>
+            </div>
+            <ChevronLeft />
+          </div>
+          <div className="activity-row">
+            <span className="activity-icon activity-blue">
+              <MessageSquareMore />
+            </span>
+            <div>
+              <p>رسالة جديدة من عميل</p>
+              <span>منذ 12 دقيقة</span>
+            </div>
+            <ChevronLeft />
+          </div>
+          <div className="activity-row">
+            <span className="activity-icon activity-amber">
+              <CalendarDays />
+            </span>
+            <div>
+              <p>
+                تم تأكيد طلب رقم <bdi>#1024</bdi>
+              </p>
+              <span>منذ 25 دقيقة</span>
+            </div>
+            <ChevronLeft />
+          </div>
+          <div className="activity-row">
+            <SocialIcon platform="whatsapp" />
+            <div>
+              <p>تم استلام منتج جديد من واتساب</p>
+              <span>منذ ساعة</span>
+            </div>
+            <ChevronLeft />
+          </div>
+        </div>
+      </section>
 
-      <nav className="bottom-navigation" aria-label="القائمة الرئيسية">{navigation.map(({ label, icon: Icon }, index) => <Button key={label} variant="dashboardNav" className={index === 0 ? "nav-active" : ""} aria-current={index === 0 ? "page" : undefined}><Icon /><span>{label}</span></Button>)}</nav>
+      <nav className="bottom-navigation" aria-label="القائمة الرئيسية">
+        {navigation.map(({ label, icon: Icon }, index) => (
+          <Button
+            key={label}
+            variant="dashboardNav"
+            className={index === 0 ? "nav-active" : ""}
+            aria-current={index === 0 ? "page" : undefined}
+          >
+            <Icon />
+            <span>{label}</span>
+          </Button>
+        ))}
+      </nav>
     </main>
   );
 }
