@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the dashboard at the index route with reusable brand and social icon components; this preserves the requested single-interface architecture.
+- Define dashboard visual styling and semantic colors in the global stylesheet; this keeps the reference design consistent across screen sizes.
