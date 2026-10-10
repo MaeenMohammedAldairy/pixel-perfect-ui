@@ -901,3 +901,336 @@ button {
     transition: none !important;
   }
 }
+
+.platform-tile-link {
+  color: inherit;
+  text-decoration: none;
+  transition: background 160ms;
+}
+.platform-tile-link:hover {
+  background: var(--mint-surface);
+}
+.platform-tile-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.platform-tile-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.connection-shell {
+  width: min(100% - 40px, 710px);
+  margin: 14px auto;
+  padding: 32px 17px 82px;
+  background: var(--surface);
+  border-radius: 26px;
+  box-shadow: var(--dashboard-shadow);
+  overflow: hidden;
+}
+.connection-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 62px;
+  margin-bottom: 23px;
+}
+.connection-wordmark {
+  font-size: 36px;
+  gap: 8px;
+}
+.connection-wordmark svg {
+  width: 91px;
+  height: 55px;
+}
+.connection-back {
+  position: absolute;
+  left: 4px;
+}
+.connection-back svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.2;
+}
+.connection-intro {
+  display: flex;
+  align-items: center;
+  min-height: 237px;
+  margin: 0 -17px;
+  padding: 0 17px;
+  background: color-mix(in oklch, var(--mint-surface) 38%, var(--surface));
+}
+.connection-intro-copy {
+  width: 51%;
+  padding-right: 0;
+}
+.connection-intro-copy h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0 0 13px;
+}
+.connection-intro-copy p {
+  color: var(--muted-foreground);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+.connection-art {
+  width: 49%;
+  height: 237px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.connection-platforms {
+  margin-top: 24px;
+}
+.connection-platforms > h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.connection-platform-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.connection-platform-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 117px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 17px 19px;
+  box-shadow: var(--dashboard-shadow);
+}
+.connection-row-chevron {
+  color: var(--muted-foreground);
+  width: 16px;
+  flex-shrink: 0;
+}
+.connection-platform-row > .social-icon {
+  width: 51px;
+  height: 51px;
+  border-radius: 15px;
+}
+.connection-platform-row > .social-icon > svg {
+  width: 40px;
+  height: 40px;
+}
+.connection-platform-row .facebook-letter {
+  font-size: 69px;
+  transform: translateY(10px);
+}
+.connection-platform-row .whatsapp-symbol {
+  transform: scale(1.22);
+}
+.connection-platform-copy {
+  flex: 1;
+  min-width: 0;
+}
+.connection-platform-copy h3 {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 3px;
+  font-weight: 700;
+}
+.connection-platform-copy p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+.connection-account-button {
+  width: 161px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  height: 42px;
+  font-size: 14px;
+  gap: 10px;
+}
+.connection-account-button svg {
+  width: 22px;
+  height: 22px;
+}
+.connection-benefits {
+  background: color-mix(in oklch, var(--mint-surface) 28%, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  margin: 40px 3px 0;
+  padding: 19px 16px 24px;
+}
+.connection-benefits h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 18px;
+}
+.connection-benefits h2 svg {
+  width: 29px;
+  height: 29px;
+  stroke-width: 1.8;
+}
+.connection-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.connection-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 10px;
+  border-left: 1px solid var(--border);
+}
+.connection-benefit:last-child {
+  border-left: 0;
+}
+.connection-benefit svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 5px;
+  color: var(--primary-foreground);
+  fill: var(--primary);
+}
+.connection-benefit p {
+  font-size: 12px;
+  line-height: 2;
+  margin: 0;
+  color: var(--blue);
+}
+@media (max-width: 600px) {
+  .connection-shell {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+    padding: 20px 9px 44px;
+    border-radius: 22px;
+  }
+  .connection-header {
+    min-height: 42px;
+    margin-bottom: 15px;
+  }
+  .connection-wordmark {
+    font-size: 28px;
+    gap: 5px;
+  }
+  .connection-wordmark svg {
+    width: 53px;
+    height: 36px;
+  }
+  .connection-back {
+    left: 0;
+    width: 24px;
+  }
+  .connection-back svg {
+    width: 21px;
+    height: 21px;
+  }
+  .connection-intro {
+    margin: 0 -9px;
+    padding: 0 9px;
+    min-height: 151px;
+  }
+  .connection-intro-copy {
+    width: 51%;
+  }
+  .connection-intro-copy h1 {
+    font-size: 17px;
+    margin-bottom: 9px;
+    white-space: nowrap;
+  }
+  .connection-intro-copy p {
+    font-size: 10px;
+    line-height: 1.95;
+  }
+  .connection-art {
+    height: 151px;
+    width: 49%;
+  }
+  .connection-platforms {
+    margin-top: 18px;
+  }
+  .connection-platforms > h2 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .connection-platform-list {
+    gap: 13px;
+  }
+  .connection-platform-row {
+    min-height: 83px;
+    gap: 10px;
+    padding: 10px 9px;
+    border-radius: 10px;
+  }
+  .connection-row-chevron {
+    width: 10px;
+  }
+  .connection-platform-row > .social-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  .connection-platform-row > .social-icon > svg {
+    width: 27px;
+    height: 27px;
+  }
+  .connection-platform-row .facebook-letter {
+    font-size: 47px;
+    transform: translateY(7px);
+  }
+  .connection-platform-row .whatsapp-symbol {
+    transform: scale(0.87);
+  }
+  .connection-platform-copy h3 {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  .connection-platform-copy p {
+    font-size: 8px;
+    line-height: 1.9;
+  }
+  .connection-account-button {
+    width: 91px;
+    height: 29px;
+    font-size: 9px;
+    padding: 0 7px;
+    gap: 6px;
+  }
+  .connection-account-button svg {
+    width: 15px;
+    height: 15px;
+  }
+  .connection-benefits {
+    margin: 25px 1px 0;
+    padding: 12px 7px 17px;
+    border-radius: 11px;
+  }
+  .connection-benefits h2 {
+    font-size: 12px;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .connection-benefits h2 svg {
+    width: 21px;
+    height: 21px;
+  }
+  .connection-benefit {
+    padding: 0 5px;
+    gap: 3px;
+  }
+  .connection-benefit p {
+    font-size: 8px;
+    line-height: 2;
+  }
+  .connection-benefit svg {
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+  }
+}
