@@ -98,9 +98,9 @@ function Index() {
           </p>
           <Button asChild variant="dashboard" className="connect-button">
             <Link to="/connect-accounts">
-            <LinkIcon />
-            <span>اربط حساباتك الآن</span>
-            <ChevronLeft />
+              <LinkIcon />
+              <span>اربط حساباتك الآن</span>
+              <ChevronLeft />
             </Link>
           </Button>
         </div>
@@ -140,7 +140,12 @@ function Index() {
         </h2>
         <div className="platform-grid">
           {platforms.map(({ platform, label }) => (
-            <Link to="/connect-accounts" className="platform-item platform-tile-link" key={platform} aria-label={`ربط حساب ${label}`}>
+            <Link
+              to="/connect-accounts"
+              className="platform-item platform-tile-link"
+              key={platform}
+              aria-label={`ربط حساب ${label}`}
+            >
               <SocialIcon platform={platform} />
               <h3>{label}</h3>
               <span className="platform-add platform-tile-add">
