@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowUp,
   Bell,
@@ -96,10 +96,12 @@ function Index() {
             <br />
             بأدوات متطورة وموظف خدمة عملاء يعمل <bdi>24/7</bdi>
           </p>
-          <Button variant="dashboard" className="connect-button">
+          <Button asChild variant="dashboard" className="connect-button">
+            <Link to="/connect-accounts">
             <LinkIcon />
             <span>اربط حساباتك الآن</span>
             <ChevronLeft />
+            </Link>
           </Button>
         </div>
         <img
@@ -138,19 +140,14 @@ function Index() {
         </h2>
         <div className="platform-grid">
           {platforms.map(({ platform, label }) => (
-            <div className="platform-item" key={platform}>
+            <Link to="/connect-accounts" className="platform-item platform-tile-link" key={platform} aria-label={`ربط حساب ${label}`}>
               <SocialIcon platform={platform} />
               <h3>{label}</h3>
-              <Button
-                variant="dashboardIcon"
-                size="icon"
-                className="platform-add"
-                aria-label={`ربط حساب ${label}`}
-              >
+              <span className="platform-add platform-tile-add">
                 <Plus />
-              </Button>
+              </span>
               <span>ربط الحساب</span>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
