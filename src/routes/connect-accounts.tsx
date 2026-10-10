@@ -22,19 +22,22 @@ export const Route = createFileRoute("/connect-accounts")({
   component: ConnectAccounts,
 });
 
-const connectionPlatforms: { platform: SocialPlatform; label: string; description: string }[] = [
+const connectionPlatforms: { platform: SocialPlatform; label: string; description: string; to: "/connect/instagram" | "/connect/facebook" | "/connect/whatsapp" }[] = [
   {
     platform: "instagram",
+    to: "/connect/instagram",
     label: "إنستغرام",
     description: "قم بربط حسابك على إنستغرام لعرض منشوراتك وتفاعل جمهورك من مكان واحد.",
   },
   {
     platform: "facebook",
+    to: "/connect/facebook",
     label: "فيسبوك",
     description: "قم بربط حسابك على فيسبوك لإدارة منشوراتك وتفاعل جمهورك من مكان واحد.",
   },
   {
     platform: "whatsapp",
+    to: "/connect/whatsapp",
     label: "واتساب",
     description: "قم بربط حسابك على واتساب للتواصل مع جمهورك بشكل مباشر وسريع.",
   },
@@ -79,7 +82,7 @@ function ConnectAccounts() {
       <section className="connection-platforms" aria-labelledby="available-platforms-title">
         <h2 id="available-platforms-title">المنصات المتاحة للربط</h2>
         <div className="connection-platform-list">
-          {connectionPlatforms.map(({ platform, label, description }) => (
+          {connectionPlatforms.map(({ platform, label, description, to }) => (
             <article className="connection-platform-row" key={platform}>
               <ChevronRight className="connection-row-chevron" />
               <SocialIcon platform={platform} />
@@ -88,12 +91,14 @@ function ConnectAccounts() {
                 <p>{description}</p>
               </div>
               <Button
+                asChild
                 variant="dashboard"
                 className="connection-account-button"
-                aria-label={`ربط حساب ${label}`}
               >
+                <Link to={to} aria-label={`ربط حساب ${label}`}>
                 <LinkIcon />
                 <span>ربط الحساب</span>
+                </Link>
               </Button>
             </article>
           ))}
